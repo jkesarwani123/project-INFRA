@@ -1,3 +1,3 @@
 module "vpc" {
-        source = "git::https://github.com/jkesarwani123/project-INFRA-VPC.git"
+        source = "https://github.com/jkesarwani123/module-infra-vpc.git"
 }
