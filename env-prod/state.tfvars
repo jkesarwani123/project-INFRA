@@ -1,3 +1,3 @@
-bucket = "jkterra-infra"
+bucket = "jkterra"
 key    = "roboshop/prod/terraform.tfstate"
 region = "us-east-1"
