@@ -17,5 +17,4 @@ module "app" {
         instance_type = each.value["instance_type"]
         subnet_id = element(lookup(lookup(lookup(module.vpc,"main",null),"name",null), "subnet_ids", null),0)
 
-
 }
