@@ -7,7 +7,7 @@ module "vpc" {
         env = var.env
 }
 
-output "vpc" {
+output "test" {
         value = module.vpc
 }
 
