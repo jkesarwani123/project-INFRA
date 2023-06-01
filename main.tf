@@ -7,6 +7,11 @@ module "vpc" {
         env = var.env
 }
 
-output "vpc" {
-        value = module.vpc
+#output "vpc" {
+#        value = module.vpc
+#}
+
+module "app" {
+        source   = "git::https://github.com/jkesarwani123/module-infra-app.git"
+        for_each = var.app
 }
