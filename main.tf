@@ -8,7 +8,7 @@ module "vpc" {
 }
 
 output "vpc" {
-        value = module.vpc
+        value = var.vpc
 }
 
 #module "app" {
