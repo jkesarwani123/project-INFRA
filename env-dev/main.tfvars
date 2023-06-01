@@ -1,4 +1,5 @@
 env = "dev"
+bastion_cidr="172.31.18.76/32"
 vpc = {
   main = {
     cidr_block = "10.0.0.0/16"
@@ -53,6 +54,7 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
+    allow_app_cidr="web"
   }
   user = {
     name = "user"
@@ -61,6 +63,7 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
+    allow_app_cidr="web"
   }
   shipping = {
     name = "shipping"
@@ -69,6 +72,7 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
+    allow_app_cidr="web"
   }
   payment = {
     name = "payment"
@@ -77,6 +81,7 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
+    allow_app_cidr="web"
   }
   dispatch = {
     name = "dispatch"
@@ -85,5 +90,6 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
+    allow_app_cidr="web"
   }
 }
