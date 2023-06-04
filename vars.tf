@@ -9,6 +9,7 @@ variable "kms_arn" {}
 variable "docdb" {}
 variable "rds" {}
 variable "elasticache" {}
+variable "rabbitmq" {}
 
 
 
