@@ -100,11 +100,3 @@ module "alb" {
         vpc_id = local.vpc_id
 
 }
-
-#
-
-#variable "name" {}
-
-#variable "vpc_id" {}
-#variable "internal" {}
-
