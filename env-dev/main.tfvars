@@ -129,6 +129,10 @@ rabbitmq = {
 
 alb = {
   public = {
+    name = "public"
+    subnet_name = "public"
+    allow_lb_cidr = null
+    internal = false
 
   }
 }
