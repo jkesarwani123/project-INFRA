@@ -30,18 +30,12 @@ module "app" {
         allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_app_cidr"],null), "subnet_cidrs", null)
 }
 
-
-#variable "engine_version" {}
-#variable "kms_arn" {}
-#variable "port_no" {
-#        default = 27017
-#}
 #variable "instance_count" {}
 #variable "instance_class" {}
 module "docdb" {
         source = "git::https://github.com/jkesarwani123/tf-module-docdb.git"
         for_each = var.docdb
-        subnets = subnet_ids = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
+        subnets = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
         tags = local.tags
         env = var.env
         vpc_id = local.vpc_id
