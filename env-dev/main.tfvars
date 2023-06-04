@@ -131,7 +131,7 @@ alb = {
   public = {
     name = "public"
     subnet_name = "public"
-    allow_alb_cidr = null
+    allow_alb_cidr = "public"
     internal = false
   }
   private = {
