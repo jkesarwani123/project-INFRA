@@ -60,4 +60,17 @@ module "rds" {
         kms_arn = var.kms_arn
 }
 
+module "elasticache" {
+        source = "git::https://github.com/jkesarwani123/tf-module-elasticache.git"
+        for_each = var.elasticache
+        engine_version = each.value["engine_version"]
+        instance_count = each.value["instance_count"]
+        instance_class = each.value["instance_class"]
+        subnets      = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
+        allow_db_cidr= lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_db_cidr"],null), "subnet_cidrs", null)
+        tags = local.tags
+        env = var.env
+        vpc_id = local.vpc_id
+        kms_arn = var.kms_arn
+}
 
