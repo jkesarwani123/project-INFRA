@@ -30,8 +30,7 @@ module "app" {
         allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_app_cidr"],null), "subnet_cidrs", null)
 }
 
-#variable "vpc_id" {}
-#variable "allow_db_cidr" {}
+
 #variable "engine_version" {}
 #variable "kms_arn" {}
 #variable "port_no" {
@@ -46,14 +45,8 @@ module "docdb" {
         tags = local.tags
         env = var.env
         vpc_id = local.vpc_id
-
+        allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_db_cidr"],null), "subnet_cidrs", null)
+        kms_arn = var.kms_arn
 }
 
-variable "docdb" {
-        default = {
-                main = {
-                        subnet_name = "db"
-                }
 
-        }
-}
