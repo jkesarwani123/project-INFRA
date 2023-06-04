@@ -148,7 +148,7 @@ alb = {
   }
   private = {
     name = "private"
-    subnet_name = "private"
+    subnet_name = "app"
     allow_alb_cidr = "web"
     internal = true
   }
