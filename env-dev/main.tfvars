@@ -41,7 +41,8 @@ app = {
     desired_capacity   = 1
     max_size           = 10
     min_size           = 1
-    allow_app_cidr="public"
+    allow_app_cidr     = "public"
+    app_port           = 80
   }
   catalogue = {
     name = "catalogue"
@@ -50,7 +51,8 @@ app = {
     desired_capacity   = 1
     max_size           = 10
     min_size           = 1
-    allow_app_cidr="web"
+    allow_app_cidr     = "web"
+    app_port           = 8080
   }
   cart = {
     name = "cart"
@@ -59,7 +61,8 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
-    allow_app_cidr="web"
+    allow_app_cidr     = "web"
+    app_port           = 8080
   }
   user = {
     name = "user"
@@ -68,7 +71,8 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
-    allow_app_cidr="web"
+    allow_app_cidr     = "web"
+    app_port           = 8080
   }
   shipping = {
     name = "shipping"
@@ -77,7 +81,8 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
-    allow_app_cidr="web"
+    allow_app_cidr     = "web"
+    app_port           = 8080
   }
   payment = {
     name = "payment"
@@ -86,7 +91,8 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
-    allow_app_cidr="web"
+    allow_app_cidr     = "web"
+    app_port           = 8080
   }
   dispatch = {
     name = "dispatch"
@@ -95,7 +101,8 @@ app = {
     desired_capacity   = 2
     max_size           = 10
     min_size           = 2
-    allow_app_cidr="web"
+    allow_app_cidr     = "web"
+    app_port           = 8080
   }
 }
 
