@@ -45,6 +45,7 @@ app = {
     min_size           = 1
     allow_app_cidr     = "public"
     app_port           = 80
+    listener_priority  = 1
   }
   catalogue = {
     name = "catalogue"
@@ -55,57 +56,58 @@ app = {
     min_size           = 1
     allow_app_cidr     = "web"
     app_port           = 8080
+    listener_priority  = 2
   }
-  cart = {
-    name = "cart"
-    instance_type = "t3.small"
-    subnet_name = "app"
-    desired_capacity   = 2
-    max_size           = 10
-    min_size           = 2
-    allow_app_cidr     = "web"
-    app_port           = 8080
-  }
-  user = {
-    name = "user"
-    instance_type = "t3.small"
-    subnet_name = "app"
-    desired_capacity   = 2
-    max_size           = 10
-    min_size           = 2
-    allow_app_cidr     = "web"
-    app_port           = 8080
-  }
-  shipping = {
-    name = "shipping"
-    instance_type = "t3.small"
-    subnet_name = "app"
-    desired_capacity   = 2
-    max_size           = 10
-    min_size           = 2
-    allow_app_cidr     = "web"
-    app_port           = 8080
-  }
-  payment = {
-    name = "payment"
-    instance_type = "t3.small"
-    subnet_name = "app"
-    desired_capacity   = 2
-    max_size           = 10
-    min_size           = 2
-    allow_app_cidr     = "web"
-    app_port           = 8080
-  }
-  dispatch = {
-    name = "dispatch"
-    instance_type = "t3.small"
-    subnet_name = "app"
-    desired_capacity   = 2
-    max_size           = 10
-    min_size           = 2
-    allow_app_cidr     = "web"
-    app_port           = 8080
-  }
+#  cart = {
+#    name = "cart"
+#    instance_type = "t3.small"
+#    subnet_name = "app"
+#    desired_capacity   = 2
+#    max_size           = 10
+#    min_size           = 2
+#    allow_app_cidr     = "web"
+#    app_port           = 8080
+#  }
+#  user = {
+#    name = "user"
+#    instance_type = "t3.small"
+#    subnet_name = "app"
+#    desired_capacity   = 2
+#    max_size           = 10
+#    min_size           = 2
+#    allow_app_cidr     = "web"
+#    app_port           = 8080
+#  }
+#  shipping = {
+#    name = "shipping"
+#    instance_type = "t3.small"
+#    subnet_name = "app"
+#    desired_capacity   = 2
+#    max_size           = 10
+#    min_size           = 2
+#    allow_app_cidr     = "web"
+#    app_port           = 8080
+#  }
+#  payment = {
+#    name = "payment"
+#    instance_type = "t3.small"
+#    subnet_name = "app"
+#    desired_capacity   = 2
+#    max_size           = 10
+#    min_size           = 2
+#    allow_app_cidr     = "web"
+#    app_port           = 8080
+#  }
+#  dispatch = {
+#    name = "dispatch"
+#    instance_type = "t3.small"
+#    subnet_name = "app"
+#    desired_capacity   = 2
+#    max_size           = 10
+#    min_size           = 2
+#    allow_app_cidr     = "web"
+#    app_port           = 8080
+#  }
 }
 
 docdb = {
