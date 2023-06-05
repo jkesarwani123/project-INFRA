@@ -46,6 +46,7 @@ app = {
     allow_app_cidr     = "public"
     app_port           = 80
     listener_priority  = 1
+    lb_type            = "public"
   }
   catalogue = {
     name = "catalogue"
@@ -57,6 +58,7 @@ app = {
     allow_app_cidr     = "web"
     app_port           = 8080
     listener_priority  = 2
+    lb_type            = "public"
   }
 #  cart = {
 #    name = "cart"
