@@ -4,6 +4,8 @@ default_vpc_id="vpc-04a46895be44933a1"
 default_vpc_cidr="172.31.0.0/16"
 default_vpc_rtid="rtb-0ae3afa267f2eea8a"
 kms_arn = "arn:aws:kms:us-east-1:043742147815:key/7a057889-68f1-4f4c-a3cb-4e0bfc8737c9"
+domain_name = "jkdevops.online"
+domain_id   = "Z08610883Q0OU1R5RFMYM"
 
 vpc = {
   main = {
