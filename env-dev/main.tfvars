@@ -47,6 +47,8 @@ app = {
     app_port           = 80
     listener_priority  = 1
     lb_type            = "public"
+    dns_name          = "dev"
+    parameters        = []
   }
   catalogue = {
     name = "catalogue"
@@ -59,6 +61,7 @@ app = {
     app_port           = 8080
     listener_priority  = 2
     lb_type            = "private"
+    parameters        = ["docdb"]
   }
 #  cart = {
 #    name = "cart"
