@@ -84,7 +84,7 @@ module "alb" {
 }
 
 output "alb_test" {
-        value = module.alb["public"]
+        value = module.alb["public"].listener_arn
 }
 module "app" {
         depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
