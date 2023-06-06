@@ -102,10 +102,10 @@ module "app" {
         subnet_ids = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
         allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_app_cidr"],null), "subnet_cidrs", null)
         listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
-        lb_dns_name    = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
+        #lb_dns_name    = lookup(lookup(module.alb, each.value["lb_type"], null), "dns_name", null)
         env=var.env
         bastion_cidr=var.bastion_cidr
         tags= local.tags
         domain_name = var.domain_name
-        domain_id   = var.domain_id
+        #domain_id   = var.domain_id
 }
