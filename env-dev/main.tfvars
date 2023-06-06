@@ -58,7 +58,7 @@ app = {
     allow_app_cidr     = "web"
     app_port           = 8080
     listener_priority  = 2
-    lb_type            = "public"
+    lb_type            = "private"
   }
 #  cart = {
 #    name = "cart"
