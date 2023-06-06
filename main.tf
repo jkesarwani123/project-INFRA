@@ -86,23 +86,23 @@ module "alb" {
 output "alb_test" {
         value = module.alb
 }
-#module "app" {
-#        depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
-#        source   = "git::https://github.com/jkesarwani123/module-infra-app.git"
-#        for_each = var.app
-#        instance_type = each.value["instance_type"]
-#        name = each.value["name"]
-#        desired_capacity = each.value["desired_capacity"]
-#        max_size = each.value["max_size"]
-#        min_size = each.value["min_size"]
-#        app_port = each.value["app_port"]
-#        listener_priority = each.value["listener_priority"]
-#        vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
-#        subnet_ids = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
-#        allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_app_cidr"],null), "subnet_cidrs", null)
-#        listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
-#        env=var.env
-#        bastion_cidr=var.bastion_cidr
-#        tags= local.tags
-#        domain_name = var.domain_name
-#}
+module "app" {
+        depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
+        source   = "git::https://github.com/jkesarwani123/module-infra-app.git"
+        for_each = var.app
+        instance_type = each.value["instance_type"]
+        name = each.value["name"]
+        desired_capacity = each.value["desired_capacity"]
+        max_size = each.value["max_size"]
+        min_size = each.value["min_size"]
+        app_port = each.value["app_port"]
+        listener_priority = each.value["listener_priority"]
+        vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
+        subnet_ids = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
+        allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_app_cidr"],null), "subnet_cidrs", null)
+        listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
+        env=var.env
+        bastion_cidr=var.bastion_cidr
+        tags= local.tags
+        domain_name = var.domain_name
+}
