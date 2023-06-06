@@ -10,9 +10,7 @@ module "vpc" {
         default_vpc_rtid=var.default_vpc_rtid
 }
 
-output "test" {
-        value = module.vpc
-}
+
 
 #variable "instance_count" {}
 #variable "instance_class" {}
@@ -85,7 +83,9 @@ module "alb" {
 
 }
 
-
+output "test" {
+        value = module.alb
+}
 module "app" {
         depends_on = [module.vpc, module.docdb, module.rds, module.elasticache, module.rabbitmq, module.alb]
         source   = "git::https://github.com/jkesarwani123/module-infra-app.git"
@@ -100,7 +100,7 @@ module "app" {
         vpc_id = lookup(lookup(module.vpc,"main",null),"vpc_id",null)
         subnet_ids = lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["subnet_name"],null), "subnet_ids", null)
         allow_app_cidr=lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_app_cidr"],null), "subnet_cidrs", null)
-        listener_arn = lookup(lookup(module.alb,each.value["lb_type"],null),"listener_arn",null)
+        listener_arn   = lookup(lookup(module.alb, each.value["lb_type"], null), "listener_arn", null)
         env=var.env
         bastion_cidr=var.bastion_cidr
         tags= local.tags
