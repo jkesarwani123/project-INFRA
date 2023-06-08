@@ -51,13 +51,13 @@ app = {
     parameters        = []
   }
   catalogue = {
-    name = "catalogue"
-    instance_type = "t3.small"
-    subnet_name = "app"
+    name               = "catalogue"
+    instance_type      = "t3.small"
+    subnet_name        = "app"
     desired_capacity   = 1
     max_size           = 10
     min_size           = 1
-    allow_app_cidr     = "web"
+    allow_app_cidr     = "app"
     app_port           = 8080
     listener_priority  = 2
     lb_type            = "private"
