@@ -65,6 +65,7 @@ module "rabbitmq" {
         allow_db_cidr= lookup(lookup(lookup(lookup(module.vpc,"main",null),"subnets",null),each.value["allow_db_cidr"],null), "subnet_cidrs", null)
         tags = local.tags
         env = var.env
+        domain_id = var.domain_id
         vpc_id = local.vpc_id
         kms_arn = var.kms_arn
         bastion_cidr = var.bastion_cidr
